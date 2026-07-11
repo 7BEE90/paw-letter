@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Наш особенный день 🐾</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Falling paws / hearts / sparkles canvas — behind everything -->
+  <canvas id="fall-canvas"></canvas>
+
+  <!-- Tap sparkle layer -->
+  <div id="sparkle-layer"></div>
+
+  <!-- ============================================= -->
+  <!-- LOCK SCREEN                                    -->
+  <!-- ============================================= -->
+  <section id="lock-screen">
+    <div class="lock-glow lock-glow--a"></div>
+    <div class="lock-glow lock-glow--b"></div>
+    <div id="lock-paws"></div>
+
+    <div class="lock-content">
+      <p class="lock-eyebrow">Добро пожаловать</p>
+      <h1 class="lock-title">Наш особенный день 🐾</h1>
+      <p class="lock-subtitle">Введи день, когда я стал частью нашей семьи ❤️</p>
+
+      <div class="passcode-dots" id="passcode-dots" aria-label="Код доступа">
+        <span class="dot" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
+
+      <p class="lock-error" id="lock-error">Попробуй вспомнить тот счастливый день 🐾</p>
+
+      <div class="keypad" id="keypad">
+        <button class="key" data-key="1">1</button>
+        <button class="key" data-key="2">2</button>
+        <button class="key" data-key="3">3</button>
+        <button class="key" data-key="4">4</button>
+        <button class="key" data-key="5">5</button>
+        <button class="key" data-key="6">6</button>
+        <button class="key" data-key="7">7</button>
+        <button class="key" data-key="8">8</button>
+        <button class="key" data-key="9">9</button>
+        <span class="key key--ghost"></span>
+        <button class="key" data-key="0">0</button>
+        <button class="key key--delete" id="key-delete" aria-label="Удалить">⌫</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- MAIN EXPERIENCE                                -->
+  <!-- ============================================= -->
+  <main id="main-experience">
+
+    <div class="ambient-bg">
+      <div class="ambient-blob ambient-blob--1"></div>
+      <div class="ambient-blob ambient-blob--2"></div>
+    </div>
+
+    <!-- HERO -->
+    <section class="section hero-section" id="hero">
+      <p class="reveal eyebrow">Специально для мамочки</p>
+      <h1 class="reveal hero-title">Письмо для моей мамочки 🐶❤️</h1>
+      <p class="reveal hero-subtitle">Если бы я умел писать, именно это я бы хотел тебе сказать...</p>
+
+      <div class="photo-frame reveal" id="photo-frame">
+        <img src="dog.jpg" alt="Наш пёсик" id="dog-photo" onerror="this.parentElement.classList.add('photo-frame--empty')">
+        <div class="photo-frame__placeholder">
+          <span>🐾</span>
+          <p>Замени <code>dog.jpg</code> на фото нашего пёсика</p>
+        </div>
+      </div>
+
+      <div class="scroll-hint reveal">
+        <span>Листай вниз</span>
+        <div class="scroll-hint__arrow"></div>
+      </div>
+    </section>
+
+    <!-- LETTER -->
+    <section class="section letter-section" id="letter-section">
+      <div class="glass-card letter-card reveal">
+        <p class="letter-kicker">Письмо</p>
+        <div class="letter-text" id="letter-text"></div>
+      </div>
+    </section>
+
+    <!-- ENDING -->
+    <section class="section ending-section" id="ending-section">
+      <div class="ending-icon reveal" id="ending-icon">🐾❤️</div>
+      <h2 class="ending-title reveal" id="ending-title-1">Спасибо, мамочка.</h2>
+      <p class="ending-subtitle reveal" id="ending-subtitle">Ты подарила мне самую счастливую жизнь.</p>
+      <h2 class="ending-title ending-title--final reveal" id="ending-title-2">Я очень тебя люблю ❤️</h2>
+    </section>
+
+    <!-- FAMILY TIMER -->
+    <section class="section timer-section" id="timer-section">
+      <h2 class="reveal timer-title">Я счастлив рядом с тобой уже...</h2>
+
+      <div class="timer-grid reveal">
+        <div class="timer-unit">
+          <span class="timer-value" id="timer-days">0</span>
+          <span class="timer-label">🐾 Дней</span>
+        </div>
+        <div class="timer-unit">
+          <span class="timer-value" id="timer-hours">00</span>
+          <span class="timer-label">❤️ Часов</span>
+        </div>
+        <div class="timer-unit">
+          <span class="timer-value" id="timer-minutes">00</span>
+          <span class="timer-label">🐾 Минут</span>
+        </div>
+        <div class="timer-unit">
+          <span class="timer-value" id="timer-seconds">00</span>
+          <span class="timer-label">❤️ Секунд</span>
+        </div>
+      </div>
+
+      <p class="timer-footer reveal">Каждый день рядом с тобой делает меня самым счастливым пёсиком на свете ❤️🐾</p>
+    </section>
+
+  </main>
+
+  <audio id="bg-music" src="music.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
